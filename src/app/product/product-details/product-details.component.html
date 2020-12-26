@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row" *ngIf="product">
+    <div class="col-md-2">
+    <img [src]="product.imageUrl" class="details-image" />
+    </div>
+    <div class="col-md-10">
+      <h4>
+          {{ product.productName | capitalize }} &nbsp;
+      </h4>
+      <br />
+      {{ product.description }}
+      <br />
+      {{ product.price |currency }}
+    </div>
+  </div>
+  <br /><br />
+
+</div>
+<div *ngIf="!product" class="container">
+   No product found
+</div>

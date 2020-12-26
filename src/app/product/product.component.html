@@ -1,0 +1,29 @@
+<div class="orders view">
+    <div class="container">
+        <header>
+            <h3><span class="glyphicon glyphicon-leaf"></span>&nbsp;&nbsp;Product Information</h3>
+        </header>
+        <br />
+        <div class="navbar">
+            <ul class="nav navbar-nav">
+                <li class="toolbar-item">
+                    <a routerLink="details" routerLinkActive="active">
+                       <span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;Product Details
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <router-outlet></router-outlet>
+            <br />
+            <br />
+            <a routerLink="/products">View all products</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

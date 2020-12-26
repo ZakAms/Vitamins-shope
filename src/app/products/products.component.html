@@ -1,0 +1,46 @@
+<div class="products view indent">
+    <div class="container">
+        <header>
+            <h3>
+                <span class="glyphicon glyphicon-user"></span>
+                {{ title }}
+            </h3>
+        </header>
+        <br />
+        <div class="row">
+            <div class="col-md-10">
+                <div class="navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="toolbar-item">
+                            <a (click)="changeDisplayMode(displayModeEnum.Card)" [class.active]="displayMode === displayModeEnum.Card">
+                                <span class="glyphicon glyphicon-th-large"></span> Card View
+                            </a>
+                        </li>
+                        <li class="toolbar-item">
+                            <a (click)="changeDisplayMode(displayModeEnum.Grid)" [class.active]="displayMode === displayModeEnum.Grid">
+                                <span class="glyphicon glyphicon-align-justify"></span> List View
+                            </a>
+                        </li>
+                    </ul>
+                    <cm-filter-textbox class="navbar-right"
+                     (changed)="filterChanged($event)"></cm-filter-textbox>
+                </div>
+            </div>
+        </div>
+
+        <cm-products-card
+          [products]="filteredProducts"
+          [hidden]="displayMode !== displayModeEnum.Card"></cm-products-card>
+
+        <cm-products-grid
+          [products]="filteredProducts"
+          [hidden]="displayMode !== displayModeEnum.Grid"></cm-products-grid>
+
+
+        <cm-pagination
+            [totalItems]="totalRecords"
+            [pageSize]="pageSize"
+            (pageChanged)="pageChanged($event)"></cm-pagination>
+
+    </div>
+</div>
